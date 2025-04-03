@@ -1,0 +1,224 @@
+---
+// Comprehensive list of TourScout conversations with real answers
+const conversations = [
+  {
+    question: "What's the drive time from Chicago to Kansas City?",
+    answer: "Drive time from Chicago to Kansas City is 7h 35m—no overnight stop needed unless you want one."
+  },
+  {
+    question: "Any good food spots near the venue that are open late?",
+    answer: "Local must-eat: Gus's World Famous Fried Chicken—open late, worth the hype. They've got vegan sides too."
+  },
+  {
+    question: "We need a hotel with bus parking near the venue.",
+    answer: "For bus drivers: Holiday Inn Express has free breakfast, solid parking, and is 3 blocks from drop-off."
+  },
+  {
+    question: "Looking for urgent care near the venue.",
+    answer: "Closest urgent care with good reviews is Mercy GoHealth. Open until 8PM and takes walk-ins."
+  },
+  {
+    question: "What's the load-in situation like at this venue?",
+    answer: "Venue has a tricky load-in—recommend alley behind 7th Ave, east side of the building. Here's the Street View link."
+  },
+  {
+    question: "Need some quiet time between soundcheck and show.",
+    answer: "For the introverts: hidden gem café in the library courtyard. Peaceful, reliable WiFi."
+  },
+  {
+    question: "Any good spots for the crew to reset on off days?",
+    answer: "Touch grass spot: Lakefront park with hammocks and trails, 8 min away."
+  },
+  {
+    question: "Where can we do laundry near the hotel?",
+    answer: "There's a laundromat with drop-off service 3 blocks away—same-day turnaround."
+  },
+  {
+    question: "Need a vocal specialist ASAP.",
+    answer: "ENT nearby: Dr. Meredith at Sinus & Voice Center—specializes in touring vocalists, takes same-day appts."
+  },
+  {
+    question: "Any interesting facts about tonight's venue?",
+    answer: "Venue fact: Radiohead recorded a live album here in 2006. FOH loves the acoustics."
+  }
+];
+
+// Duplicate conversations to create seamless loop
+const scrollingConversations = [...conversations, ...conversations];
+---
+
+<div class="flex gap-4 max-w-6xl mx-auto">
+  <!-- Questions Column -->
+  <div class="flex-1 relative h-64 overflow-hidden text-gray-600 dark:text-gray-300">
+    <div class="questions-wrapper">
+      <div class="questions-scroll">
+        {scrollingConversations.map(({ question }) => (
+          <div class="question-item py-3 pl-6 border-l-4 border-purple-500">
+            <p class="text-lg">{question}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <!-- Answers Column -->
+  <div class="flex-1 relative h-64 overflow-hidden text-gray-600 dark:text-gray-300">
+    <div class="answers-wrapper">
+      <div class="answers-scroll">
+        {scrollingConversations.map(({ answer }) => (
+          <div class="answer-item py-3 pr-6 border-r-4 border-blue-500 text-right">
+            <p class="text-lg">{answer}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .questions-wrapper,
+  .answers-wrapper {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    mask-image: linear-gradient(
+      to bottom,
+      transparent,
+      black 15%,
+      black 85%,
+      transparent
+    );
+  }
+
+  .questions-scroll {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    animation: scrollQuestions 60s linear infinite;
+  }
+
+  .answers-scroll {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    animation: scrollAnswers 60s linear infinite;
+  }
+
+  .question-item,
+  .answer-item {
+    opacity: 0.7;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: transparent;
+    margin: 0.5rem 0;
+    position: relative;
+  }
+
+  .question-item {
+    transform: translateX(-100%);
+    animation: slideInQuestion 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  .answer-item {
+    transform: translateX(100%);
+    animation: slideInAnswer 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  .question-item:hover,
+  .answer-item:hover {
+    opacity: 1;
+    background: rgba(var(--color-primary-rgb), 0.05);
+    transform: scale(1.02);
+  }
+
+  .question-item:hover {
+    transform: translateX(8px) scale(1.02);
+  }
+
+  .answer-item:hover {
+    transform: translateX(-8px) scale(1.02);
+  }
+
+  @keyframes scrollQuestions {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-50%);
+    }
+  }
+
+  @keyframes scrollAnswers {
+    0% {
+      transform: translateY(-50%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideInQuestion {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 0.7;
+    }
+  }
+
+  @keyframes slideInAnswer {
+    0% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 0.7;
+    }
+  }
+
+  .questions-wrapper:hover .questions-scroll,
+  .answers-wrapper:hover .answers-scroll {
+    animation-play-state: paused;
+  }
+
+  /* Dark mode enhancements */
+  :global(.dark) .question-item:hover,
+  :global(.dark) .answer-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  /* Add subtle pulse animation for new items */
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(var(--color-primary-rgb), 0.4);
+    }
+    70% {
+      box-shadow: 0 0 0 10px rgba(var(--color-primary-rgb), 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(var(--color-primary-rgb), 0);
+    }
+  }
+
+  .question-item:first-child,
+  .answer-item:first-child {
+    animation: pulse 2s infinite;
+  }
+</style>
+
+<script>
+  const scrollContainers = document.querySelectorAll('.questions-scroll, .answers-scroll') as NodeListOf<HTMLElement>;
+  scrollContainers.forEach(container => {
+    container.addEventListener('animationend', () => {
+      container.style.animation = 'none';
+      void container.offsetWidth;
+      container.style.animation = container.classList.contains('questions-scroll') 
+        ? 'scrollQuestions 60s linear infinite'
+        : 'scrollAnswers 60s linear infinite';
+    });
+  });
+</script> 

@@ -1,0 +1,89 @@
+---
+import { ViewTransitions } from 'astro:transitions';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "TourScout - Your all-in-one routing assistant for touring artists" } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <ViewTransitions />
+  </head>
+  <body class="h-full bg-gray-50">
+    <div class="phone-frame">
+      <div class="content-area">
+        <Header />
+        <main>
+          <div class="px-4 py-4">
+            <slot />
+          </div>
+        </main>
+        <Footer />
+      </div>
+    </div>
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --accent: 136, 58, 234;
+    --accent-light: 224, 204, 250;
+    --accent-dark: 49, 10, 101;
+    --accent-gradient: linear-gradient(
+      45deg,
+      rgb(var(--accent)),
+      rgb(var(--accent-light)) 30%,
+      white 60%
+    );
+  }
+  
+  html {
+    font-family: system-ui, sans-serif;
+    background: #f6f6f6;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+  .phone-frame {
+    padding: 1rem;
+    background: linear-gradient(to bottom, #1a1a1a, #2a2a2a);
+    border-radius: 2rem;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
+  }
+
+  .content-area {
+    width: 300px;
+    height: 600px;
+    background: white;
+    overflow: hidden;
+  }
+
+  #app {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+</style> 
