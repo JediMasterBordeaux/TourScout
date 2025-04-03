@@ -5,7 +5,7 @@ layout: '~/layouts/LegalLayout.astro'
 
 _Effective Date_: April 2, 2025
 
-These Terms and Conditions ("Terms") govern your access to and use of TourScout ("Site") and the TOUR SCOUT service ("Service"), operated by Ground Branch Inc ("Company"). By accessing the Site or purchasing or using the Service, you agree to be bound by these Terms.
+These Terms and Conditions ("Terms") govern your access to and use of ConcertIndustry.com ("Site") and the TOUR SCOUT service ("Service"), operated by Ground Branch Inc ("Company"). By accessing the Site or purchasing or using the Service, you agree to be bound by these Terms.
 
 ## 1. Use of the Site and Service
 
@@ -45,7 +45,7 @@ These Terms are governed by the laws of the State of Florida, without regard to 
 
 ## 10. Contact Us
 
-For questions about these Terms or the Service, you can reach us at [support@concertindustry.com](mailto:support@concertindustry.com).
+For questions about these Terms or the Service, you can reach us at support@concertindustry.com.
 
 ## 11. AI-Generated Content Disclaimer
 
@@ -62,7 +62,5 @@ By submitting feedback, suggestions, or feature requests, you grant Ground Branc
 ## 14. Security and Availability
 
 We implement reasonable technical and organizational measures to protect your data and maintain service uptime. However, we cannot guarantee uninterrupted access or immunity from outages, data loss, or cyber threats.
-
----
 
 © 2025 Ground Branch Inc. All rights reserved.
