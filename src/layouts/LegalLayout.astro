@@ -1,0 +1,14 @@
+---
+import Layout from '~/layouts/Layout.astro';
+
+const { frontmatter } = Astro.props;
+---
+
+<Layout>
+  <section class="px-4 py-16 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-4xl">
+    <h1 class="text-4xl font-bold mb-8">{frontmatter.title}</h1>
+    <div class="prose max-w-4xl dark:prose-invert">
+      <slot />
+    </div>
+  </section>
+</Layout> 
