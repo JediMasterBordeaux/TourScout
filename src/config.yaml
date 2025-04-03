@@ -18,7 +18,7 @@ metadata:
   openGraph:
     site_name: TourScout
     images:
-      - url: '/images/tour-scout-mockup.png'
+      - url: '/images/tourscout-social-preview.png'
         width: 1200
         height: 630
     type: website
