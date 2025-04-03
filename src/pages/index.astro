@@ -1,7 +1,6 @@
 ---
 import Layout from '~/layouts/Layout.astro';
 import Hero from '~/components/widgets/Hero.astro';
-import Features from '~/components/widgets/Features.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import ScrollingConversation from '~/components/widgets/ScrollingConversation.astro';
@@ -201,62 +200,9 @@ const seoData = {
     </div>
   </div>
 
-  <Features
-    id="features"
-    tagline="Features"
-    title="What TourScout Can Do"
-    subtitle="Your all-in-one routing assistant, tour stop planner, and local guide — built specifically for touring professionals."
-    items={[
-      {
-        title: 'Smart Tour Routing',
-        description: 'Create full tour routing tables with dates, cities, venues, drive times, and travel notes.',
-        icon: 'tabler:route',
-      },
-      {
-        title: 'Travel Day Planning',
-        description: 'Suggest travel day stopovers with hotel options, especially on long hauls.',
-        icon: 'tabler:map-pin',
-      },
-      {
-        title: 'Hotel Recommendations',
-        description: 'Find hotels by category with bus/truck parking and crew-friendly amenities.',
-        icon: 'tabler:building',
-      },
-      {
-        title: 'Local Knowledge',
-        description: 'Discover late-night food, coffee, laundry, and other essential amenities near venues.',
-        icon: 'tabler:map-search',
-      },
-      {
-        title: 'Wellness Resources',
-        description: 'Locate wellness resources, concierge doctors, urgent care, and other health services.',
-        icon: 'tabler:heart',
-      },
-      {
-        title: 'Venue Intelligence',
-        description: 'Get venue fun facts, music history, and load-in access information.',
-        icon: 'tabler:building-community',
-      },
-    ]}
-  />
-
-  <div class="relative py-12 bg-white dark:bg-slate-900">
-    <div class="container mx-auto px-4">
-      <div class="max-w-3xl mx-auto text-center">
-        <h2 class="text-3xl md:text-4xl font-bold leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200">
-          In Beta — And Grateful You're Here
-        </h2>
-        <p class="text-xl text-gray-600 dark:text-gray-400">
-          If you're using TourScout now, thank you. You're not just testing a tool — you're helping shape the future of live touring. Your feedback helps us build smarter, faster, and with more heart.
-        </p>
-      </div>
-    </div>
-  </div>
-
   <Features2
     title="Key Capabilities"
-    subtitle="Everything you need for successful tour planning"
-    tagline="Features"
+    subtitle="TourScout is built to handle the unique challenges of touring professionals."
     items={[
       {
         title: 'Tour Routing',
