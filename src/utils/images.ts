@@ -85,7 +85,7 @@ export const adaptOpenGraphImages = async (
         return defaultImage;
       }
 
-      let _image;
+      let _image: ImageMetadata | undefined;
 
       try {
         if (
@@ -93,22 +93,20 @@ export const adaptOpenGraphImages = async (
           (resolvedImage.startsWith('http://') || resolvedImage.startsWith('https://')) &&
           isUnpicCompatible(resolvedImage)
         ) {
-          _image = (await unpicOptimizer(resolvedImage, [defaultWidth], defaultWidth, defaultHeight, 'jpg'))[0];
+          _image = (await unpicOptimizer(resolvedImage, [defaultWidth], defaultWidth, defaultHeight, 'jpg'))[0] as ImageMetadata;
         } else if (resolvedImage) {
           const dimensions =
             typeof resolvedImage !== 'string' && resolvedImage?.width <= defaultWidth
               ? [resolvedImage?.width, resolvedImage?.height]
               : [defaultWidth, defaultHeight];
-          _image = (
-            await astroAssetsOptimizer(resolvedImage, [dimensions[0]], dimensions[0], dimensions[1], 'jpg')
-          )[0];
+          _image = (await astroAssetsOptimizer(resolvedImage, [dimensions[0]], dimensions[0], dimensions[1], 'jpg'))[0] as ImageMetadata;
         }
 
-        if (typeof _image === 'object' && 'src' in _image) {
+        if (_image) {
           return {
             url: typeof _image.src === 'string' ? String(new URL(_image.src, astroSite)) : defaultImage.url,
-            width: 'width' in _image && typeof _image.width === 'number' ? _image.width : defaultImage.width,
-            height: 'height' in _image && typeof _image.height === 'number' ? _image.height : defaultImage.height,
+            width: _image.width || defaultImage.width,
+            height: _image.height || defaultImage.height,
           };
         }
       } catch (error) {

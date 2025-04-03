@@ -1,5 +1,5 @@
 ---
-import { ViewTransitions } from 'astro:transitions';
+import { ClientRouter } from 'astro:transitions';
 import Header from '../components/widgets/Header.astro';
 import Footer from '../components/widgets/Footer.astro';
 
@@ -20,7 +20,7 @@ const { title, description = "TourScout - Your all-in-one routing assistant for 
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <ViewTransitions />
+    <ClientRouter />
   </head>
   <body class="h-full bg-gray-50">
     <div class="phone-frame">
