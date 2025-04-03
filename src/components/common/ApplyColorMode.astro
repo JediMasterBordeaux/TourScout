@@ -1,10 +1,8 @@
 ---
-import { UI } from 'astrowind:config';
-
-// TODO: This code is temporary
+// Theme implementation
 ---
 
-<script is:inline define:vars={{ defaultTheme: UI.theme || 'system' }}>
+<script is:inline>
   function applyTheme(theme) {
     if (theme === 'dark') {
       document.documentElement.classList.add('dark');
@@ -20,14 +18,13 @@ import { UI } from 'astrowind:config';
     }
   }
 
-  if ((defaultTheme && defaultTheme.endsWith(':only')) || (!localStorage.theme && defaultTheme !== 'system')) {
-    applyTheme(defaultTheme.replace(':only', ''));
-  } else if (
-    localStorage.theme === 'dark' ||
-    (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
-  ) {
-    applyTheme('dark');
-  } else {
-    applyTheme('light');
-  }
+  // Force dark mode
+  applyTheme('dark');
+  localStorage.theme = 'dark';
+
+  // Add meta theme-color for mobile browsers
+  const metaThemeColor = document.createElement('meta');
+  metaThemeColor.name = 'theme-color';
+  metaThemeColor.content = '#0f172a'; // Dark background color
+  document.head.appendChild(metaThemeColor);
 </script>
