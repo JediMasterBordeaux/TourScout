@@ -7,7 +7,6 @@ import CommonMeta from '~/components/common/CommonMeta.astro';
 import Favicons from '~/components/Favicons.astro';
 import CustomStyles from '~/components/CustomStyles.astro';
 import ApplyColorMode from '~/components/common/ApplyColorMode.astro';
-import Metadata from '~/components/common/Metadata.astro';
 import SiteVerification from '~/components/common/SiteVerification.astro';
 import Analytics from '~/components/common/Analytics.astro';
 import BasicScripts from '~/components/common/BasicScripts.astro';
@@ -29,11 +28,28 @@ const { language, textDirection } = I18N;
 <!doctype html>
 <html lang={language} dir={textDirection} class="2xl:text-[20px]">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{metadata?.title || "Tour Scout – AI-Powered Tour Planning Assistant"}</title>
+    <meta name="description" content={metadata?.description || "Smarter routing, crew-ready logistics, and peace of mind for every show."} />
+    
+    <!-- Basic Open Graph Tags -->
+    <meta property="og:title" content="Tour Scout – AI-Powered Tour Planning Assistant" />
+    <meta property="og:description" content="Smarter routing, crew-ready logistics, and peace of mind for every show." />
+    <meta property="og:image" content="https://tourscout.ai/images/tourscout-social-preview.png" />
+    <meta property="og:url" content="https://tourscout.ai" />
+    <meta property="og:type" content="website" />
+    
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Tour Scout – AI-Powered Tour Planning Assistant" />
+    <meta name="twitter:description" content="Smarter routing, crew-ready logistics, and peace of mind for every show." />
+    <meta name="twitter:image" content="https://tourscout.ai/images/tourscout-social-preview.png" />
+    
     <CommonMeta />
     <Favicons />
     <CustomStyles />
     <ApplyColorMode />
-    <Metadata {...metadata} />
     <SiteVerification />
     <Analytics />
 
