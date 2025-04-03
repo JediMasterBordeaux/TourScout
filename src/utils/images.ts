@@ -7,8 +7,7 @@ const load = async function () {
   let images: Record<string, () => Promise<unknown>> | undefined = undefined;
   try {
     images = import.meta.glob('~/assets/images/**/*.{jpeg,jpg,png,tiff,webp,gif,svg,JPEG,JPG,PNG,TIFF,WEBP,GIF,SVG}');
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  } catch (error) {
+  } catch {
     // continue regardless of error
   }
   return images;
@@ -26,6 +25,11 @@ export const fetchLocalImages = async () => {
 export const findImage = async (
   imagePath?: string | ImageMetadata | null
 ): Promise<string | ImageMetadata | undefined | null> => {
+  // Handle undefined or null
+  if (!imagePath) {
+    return null;
+  }
+
   // Not string
   if (typeof imagePath !== 'string') {
     return imagePath;
@@ -58,7 +62,14 @@ export const adaptOpenGraphImages = async (
   astroSite: URL | undefined = new URL('')
 ): Promise<OpenGraph> => {
   if (!openGraph?.images?.length) {
-    return openGraph;
+    return {
+      ...openGraph,
+      images: [{
+        url: '/images/tourscout-social-preview.png',
+        width: 1200,
+        height: 630,
+      }]
+    };
   }
 
   const images = openGraph.images;
@@ -67,16 +78,26 @@ export const adaptOpenGraphImages = async (
 
   const adaptedImages = await Promise.all(
     images.map(async (image) => {
-      if (image?.url) {
-        const resolvedImage = (await findImage(image.url)) as ImageMetadata | string | undefined;
-        if (!resolvedImage) {
-          return {
-            url: '',
-          };
-        }
+      if (!image?.url) {
+        return {
+          url: '/images/tourscout-social-preview.png',
+          width: 1200,
+          height: 630,
+        };
+      }
 
-        let _image;
+      const resolvedImage = (await findImage(image.url)) as ImageMetadata | string | undefined;
+      if (!resolvedImage) {
+        return {
+          url: '/images/tourscout-social-preview.png',
+          width: 1200,
+          height: 630,
+        };
+      }
 
+      let _image;
+
+      try {
         if (
           typeof resolvedImage === 'string' &&
           (resolvedImage.startsWith('http://') || resolvedImage.startsWith('https://')) &&
@@ -93,23 +114,25 @@ export const adaptOpenGraphImages = async (
           )[0];
         }
 
-        if (typeof _image === 'object') {
+        if (typeof _image === 'object' && 'src' in _image) {
           return {
-            url: 'src' in _image && typeof _image.src === 'string' ? String(new URL(_image.src, astroSite)) : '',
-            width: 'width' in _image && typeof _image.width === 'number' ? _image.width : undefined,
-            height: 'height' in _image && typeof _image.height === 'number' ? _image.height : undefined,
+            url: typeof _image.src === 'string' ? String(new URL(_image.src, astroSite)) : '/images/tourscout-social-preview.png',
+            width: 'width' in _image && typeof _image.width === 'number' ? _image.width : 1200,
+            height: 'height' in _image && typeof _image.height === 'number' ? _image.height : 630,
           };
         }
-        return {
-          url: '',
-        };
+      } catch (error) {
+        // If any error occurs during image processing, return the default
+        console.error('Error processing image:', error);
       }
 
       return {
-        url: '',
+        url: '/images/tourscout-social-preview.png',
+        width: 1200,
+        height: 630,
       };
     })
   );
 
-  return { ...openGraph, ...(adaptedImages ? { images: adaptedImages } : {}) };
+  return { ...openGraph, images: adaptedImages };
 };
