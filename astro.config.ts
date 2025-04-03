@@ -1,27 +1,24 @@
 import path from 'path';
 import { fileURLToPath } from 'url';
-
 import { defineConfig } from 'astro/config';
-
 import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
 import mdx from '@astrojs/mdx';
 import partytown from '@astrojs/partytown';
-import icon from 'astro-icon';
 import compress from 'astro-compress';
+import icon from 'astro-icon';
 import type { AstroIntegration } from 'astro';
-
-import { readingTimeRemarkPlugin, responsiveTablesRehypePlugin, lazyImagesRehypePlugin } from './src/utils/frontmatter';
+import astrowind from './vendor/integration';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-const hasExternalScripts = false;
-const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroIntegration)[] = []) =>
-  hasExternalScripts ? (Array.isArray(items) ? items.map((item) => item()) : [items()]) : [];
+const whenExternalScripts = (items: AstroIntegration[]) =>
+  import.meta.env.PROD ? items : [];
 
 export default defineConfig({
   output: 'static',
   site: 'https://tourscout.ai',
+  base: '/',
 
   integrations: [
     tailwind({
@@ -34,13 +31,7 @@ export default defineConfig({
         tabler: ['*'],
       },
     }),
-
-    ...whenExternalScripts(() =>
-      partytown({
-        config: { forward: ['dataLayer.push'] },
-      })
-    ),
-
+    ...whenExternalScripts([partytown()]),
     compress({
       CSS: true,
       HTML: {
@@ -53,23 +44,33 @@ export default defineConfig({
       SVG: false,
       Logger: 1,
     }),
+    astrowind({
+      config: './src/config.yaml',
+    }),
   ],
 
   image: {
     service: {
-      entrypoint: 'astro/assets/services/sharp'
+      entrypoint: 'astro/assets/services/sharp',
     },
+    domains: ['cdn.pixabay.com'],
   },
 
   markdown: {
-    remarkPlugins: [readingTimeRemarkPlugin],
-    rehypePlugins: [responsiveTablesRehypePlugin, lazyImagesRehypePlugin],
+    remarkPlugins: [],
+    rehypePlugins: [],
   },
 
   vite: {
     resolve: {
       alias: {
         '~': path.resolve(__dirname, './src'),
+        'astrowind:config': path.resolve(__dirname, './src/config.yaml'),
+      },
+    },
+    build: {
+      rollupOptions: {
+        external: ['astrowind:config'],
       },
     },
   },
