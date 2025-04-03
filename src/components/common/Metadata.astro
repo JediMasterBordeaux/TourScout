@@ -1,11 +1,10 @@
 ---
 import merge from 'lodash.merge';
 import { AstroSeo } from '@astrolib/seo';
-import tourScoutMockup from '~/assets/images/tour-scout-mockup.png';
 
 import type { Props as AstroSeoProps } from '@astrolib/seo';
 
-import { METADATA, I18N } from 'astrowind:config';
+import { METADATA, I18N, SITE } from 'astrowind:config';
 import type { MetaData } from '~/types';
 import { getCanonical } from '~/utils/permalinks';
 
@@ -35,12 +34,13 @@ const seoProps: AstroSeoProps = merge(
     description: undefined,
     openGraph: {
       url: canonical,
-      site_name: 'TourScout',
+      site_name: SITE.name,
       images: [
         {
-          url: tourScoutMockup.src,
-          width: tourScoutMockup.width,
-          height: tourScoutMockup.height,
+          url: SITE.ogImage.src,
+          width: SITE.ogImage.width,
+          height: SITE.ogImage.height,
+          alt: 'Tour Scout - AI Tour Planning Assistant',
         }
       ],
       locale: I18N?.language || 'en',

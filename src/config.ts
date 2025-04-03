@@ -1,18 +1,18 @@
 export const SITE = {
   name: 'Tour Scout',
-  site: 'https://concertindustry.com',
+  site: 'https://tourscout.ai',
   base: '/',
   description: 'AI-Powered Tour Planning Assistant',
   ogImage: {
-    src: '/images/tour-scout-mockup.png',
-    width: 375,
-    height: 812
+    src: '/images/tourscout-social-preview.png',
+    width: 1200,
+    height: 630
   },
 };
 
 export const METADATA = {
   title: {
-    default: SITE.name,
+    default: 'Tour Scout – AI-Powered Tour Planning Assistant',
     template: '%s — Tour Scout',
   },
   description: 'Smarter routing, crew-ready logistics, and peace of mind for every show.',
@@ -24,7 +24,7 @@ export const METADATA = {
     type: 'website',
     locale: 'en_US',
     url: SITE.site,
-    title: SITE.name,
+    title: 'Tour Scout – AI-Powered Tour Planning Assistant',
     description: 'Smarter routing, crew-ready logistics, and peace of mind for every show.',
     siteName: SITE.name,
     images: [
@@ -32,13 +32,13 @@ export const METADATA = {
         url: SITE.ogImage.src,
         width: SITE.ogImage.width,
         height: SITE.ogImage.height,
-        alt: SITE.name,
+        alt: 'Tour Scout - AI Tour Planning Assistant',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: SITE.name,
+    title: 'Tour Scout – AI-Powered Tour Planning Assistant',
     description: 'Smarter routing, crew-ready logistics, and peace of mind for every show.',
     images: [SITE.ogImage.src],
   },
