@@ -4,7 +4,7 @@ import { AstroSeo } from '@astrolib/seo';
 
 import type { Props as AstroSeoProps } from '@astrolib/seo';
 
-import { SITE, METADATA, I18N } from 'astrowind:config';
+import { METADATA, I18N } from 'astrowind:config';
 import type { MetaData } from '~/types';
 import { getCanonical } from '~/utils/permalinks';
 
@@ -34,13 +34,19 @@ const seoProps: AstroSeoProps = merge(
     description: undefined,
     openGraph: {
       url: canonical,
-      site_name: SITE?.name,
-      images: [],
+      site_name: 'TourScout',
+      images: [
+        {
+          url: '/images/tourscout-social-preview.png',
+          width: 1200,
+          height: 630,
+        }
+      ],
       locale: I18N?.language || 'en',
       type: 'website',
     },
     twitter: {
-      cardType: openGraph?.images?.length ? 'summary_large_image' : 'summary',
+      cardType: 'summary_large_image',
     },
   },
   {
