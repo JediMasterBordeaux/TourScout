@@ -44,9 +44,7 @@ export default defineConfig({
       SVG: false,
       Logger: 1,
     }),
-    astrowind({
-      config: './src/config.yaml',
-    }),
+    astrowind(),
   ],
 
   image: {
@@ -65,12 +63,6 @@ export default defineConfig({
     resolve: {
       alias: {
         '~': path.resolve(__dirname, './src'),
-        'astrowind:config': path.resolve(__dirname, './src/config.yaml'),
-      },
-    },
-    build: {
-      rollupOptions: {
-        external: ['astrowind:config'],
       },
     },
   },
