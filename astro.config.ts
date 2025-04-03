@@ -11,8 +11,6 @@ import icon from 'astro-icon';
 import compress from 'astro-compress';
 import type { AstroIntegration } from 'astro';
 
-import astrowind from './vendor/integration';
-
 import { readingTimeRemarkPlugin, responsiveTablesRehypePlugin, lazyImagesRehypePlugin } from './src/utils/frontmatter';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -23,6 +21,7 @@ const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroInteg
 
 export default defineConfig({
   output: 'static',
+  site: 'https://tourscout.ai',
 
   integrations: [
     tailwind({
@@ -33,17 +32,6 @@ export default defineConfig({
     icon({
       include: {
         tabler: ['*'],
-        'flat-color-icons': [
-          'template',
-          'gallery',
-          'approval',
-          'document',
-          'advertising',
-          'currency-exchange',
-          'voice-presentation',
-          'business-contact',
-          'database',
-        ],
       },
     }),
 
@@ -65,17 +53,12 @@ export default defineConfig({
       SVG: false,
       Logger: 1,
     }),
-
-    astrowind({
-      config: './src/config.yaml',
-    }),
   ],
 
   image: {
     service: {
       entrypoint: 'astro/assets/services/sharp'
     },
-    domains: ['cdn.pixabay.com'],
   },
 
   markdown: {
