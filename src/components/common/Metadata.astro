@@ -1,6 +1,7 @@
 ---
 import merge from 'lodash.merge';
 import { AstroSeo } from '@astrolib/seo';
+import tourScoutMockup from '~/assets/images/tour-scout-mockup.png';
 
 import type { Props as AstroSeoProps } from '@astrolib/seo';
 
@@ -37,9 +38,9 @@ const seoProps: AstroSeoProps = merge(
       site_name: 'TourScout',
       images: [
         {
-          url: '/images/tourscout-social-preview.png',
-          width: 1200,
-          height: 630,
+          url: tourScoutMockup.src,
+          width: tourScoutMockup.width,
+          height: tourScoutMockup.height,
         }
       ],
       locale: I18N?.language || 'en',

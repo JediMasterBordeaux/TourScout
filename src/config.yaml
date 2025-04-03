@@ -1,6 +1,6 @@
 site:
-  name: TourScout
-  site: 'https://tourscout.ai'
+  name: Tour Scout
+  site: 'https://concertindustry.com'
   base: '/'
   trailingSlash: false
 
@@ -9,18 +9,18 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: TourScout
-    template: '%s — TourScout'
-  description: "Your AI-powered tour planning assistant. Get instant answers about venues, routing, accommodations, and local amenities."
+    default: Tour Scout
+    template: '%s — Tour Scout'
+  description: "Smarter routing, crew-ready logistics, and peace of mind for every show."
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: TourScout
+    site_name: Tour Scout
     images:
-      - url: '/images/tourscout-social-preview.png'
-        width: 1200
-        height: 630
+      - url: '/images/tour-scout-mockup.png'
+        width: 375
+        height: 812
     type: website
   twitter:
     cardType: summary_large_image

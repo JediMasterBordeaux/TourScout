@@ -72,6 +72,9 @@ export default defineConfig({
   ],
 
   image: {
+    service: {
+      entrypoint: 'astro/assets/services/sharp'
+    },
     domains: ['cdn.pixabay.com'],
   },
 

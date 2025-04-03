@@ -4,8 +4,6 @@ import Hero from '~/components/widgets/Hero.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import ScrollingConversation from '~/components/widgets/ScrollingConversation.astro';
-import Image from '~/components/common/Image.astro';
-import tourScoutMockup from '~/assets/images/tour-scout-mockup.png';
 
 // SEO metadata
 const seoData = {
@@ -66,13 +64,13 @@ const seoData = {
       <div class="relative group max-w-[375px] mx-auto p-15">
         <div class="absolute -inset-3 bg-gradient-to-r from-purple-600 to-pink-600 rounded-[2.5rem] blur-xl opacity-30 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
         <div class="relative">
-          <Image
-            src={tourScoutMockup}
-            alt="TOUR SCOUT Chat Interface"
-            class="relative mx-auto w-full h-auto"
-            width={320}
-            height={650}
+          <img 
+            src="/images/tour-scout-mockup.png" 
+            alt="TOUR SCOUT Chat Interface - AI-powered assistant for touring professionals"
+            width="375"
+            height="812"
             loading="eager"
+            class="relative mx-auto w-full h-auto rounded-[2rem] shadow-xl"
           />
         </div>
       </div>
@@ -207,55 +205,52 @@ const seoData = {
       {
         title: 'Tour Routing',
         description: "Create comprehensive routing tables with dates, cities, venues, and drive times. TourScout understands the unique challenges of tour logistics.",
-        icon: 'flat-color-icons:template',
+        icon: 'tabler:route',
       },
       {
         title: 'Hotel Planning',
         description: "Find the perfect hotels with bus/truck parking and crew-friendly amenities. Get recommendations based on real touring experience.",
-        icon: 'flat-color-icons:gallery',
+        icon: 'tabler:building',
       },
       {
         title: 'Local Knowledge',
         description: "Discover late-night food, coffee, laundry, and other essential amenities near venues. All recommendations are crew-tested.",
-        icon: 'flat-color-icons:approval',
+        icon: 'tabler:map-pin',
       },
       {
         title: 'Venue Intelligence',
         description: "Get detailed venue information, load-in access details, and local event warnings that could affect your show.",
-        icon: 'flat-color-icons:document',
+        icon: 'tabler:building-warehouse',
       },
       {
         title: 'Wellness Resources',
         description: "Find concierge doctors, urgent care, ENTs, chiropractors, and other health services near venues.",
-        icon: 'flat-color-icons:advertising',
+        icon: 'tabler:heart-plus',
       },
       {
         title: 'Interactive Maps',
         description: "Build interactive HTML maps with color-coded markers and smart location clustering for better visualization.",
-        icon: 'flat-color-icons:currency-exchange',
+        icon: 'tabler:map-2',
       },
       {
         title: 'Travel Planning',
         description: "Get smart suggestions for travel day stopovers and optimal routes based on crew experience.",
-        icon: 'flat-color-icons:voice-presentation',
+        icon: 'tabler:compass',
       },
       {
         title: 'Local Events',
         description: "Stay informed about local events that could affect load-in or hotel access.",
-        icon: 'flat-color-icons:business-contact',
+        icon: 'tabler:calendar-event',
       },
       {
         title: 'Crew Resources',
         description: "Access a comprehensive database of crew-friendly locations and services across the country.",
-        icon: 'flat-color-icons:database',
+        icon: 'tabler:users',
       },
       {
         title: 'Integrations',
         description: "<span class='group-hover:animate-sparkle'>✨</span> Coming Soon: Seamlessly connect with your existing tools. Calendar syncing, API integrations, and more powerful features coming in TourScout Pro.",
-        icon: 'tabler:api',
-        classes: {
-          panel: 'group hover:border-purple-500/30 transition-colors duration-300'
-        }
+        icon: 'tabler:api'
       }
     ]}
   >

@@ -1,6 +1,7 @@
 import { isUnpicCompatible, unpicOptimizer, astroAssetsOptimizer } from './images-optimization';
 import type { ImageMetadata } from 'astro';
 import type { OpenGraph } from '@astrolib/seo';
+import tourScoutMockup from '~/assets/images/tour-scout-mockup.png';
 
 const load = async function () {
   let images: Record<string, () => Promise<unknown>> | undefined = undefined;
@@ -32,6 +33,9 @@ export const findImage = async (
 
   // Absolute paths
   if (imagePath.startsWith('http://') || imagePath.startsWith('https://') || imagePath.startsWith('/')) {
+    if (imagePath === '/images/tour-scout-mockup.png') {
+      return tourScoutMockup;
+    }
     return imagePath;
   }
 

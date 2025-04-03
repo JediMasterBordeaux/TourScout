@@ -1,68 +1,70 @@
 ---
 title: 'Privacy Policy'
-layout: '~/layouts/LegalLayout.astro'
+layout: '~/layouts/PageLayout.astro'
 ---
+
+# Privacy Policy
 
 _Effective Date_: April 2, 2025
 
-This Privacy Policy describes how Ground Branch Inc ("we", "our", or "us") collects, uses, and protects your information when you use ConcertIndustry.com and the TOUR SCOUT service ("Service").
+This Privacy Policy describes how Ground Branch Inc ("we," "us," or "our") collects, uses, and shares your personal information when you use our website, ConcertIndustry.com, and the TOUR SCOUT service (collectively, the "Service").
 
 ## 1. Information We Collect
 
-We may collect the following types of information when you use our Site and Service:
-
-- Personal Information: such as your name, email address, billing details, and account login credentials.
-- Tour Data: including documents, routes, crew details, venue information, and schedules you upload or input.
-- Usage Data: IP address, browser type, pages visited, time spent, and referring pages.
+We collect information that you provide directly to us, including:
+- Account information (name, email, password)
+- Payment information
+- Tour data and preferences
+- Communication preferences
+- Feedback and support requests
 
 ## 2. How We Use Your Information
 
-We use your information to:
+We use the information we collect to:
+- Provide and maintain the Service
+- Process your payments
+- Send you important updates and notifications
+- Respond to your requests and support needs
+- Improve and develop our Service
+- Protect against fraud and abuse
 
-- Provide and maintain the TOUR SCOUT service
-- Process payments and manage subscriptions
-- Respond to your inquiries and support requests
-- Analyze and improve the performance and features of the Site
-- Communicate service updates, promotional messages, or legal notices
+## 3. Information Sharing
 
-## 3. Data Sharing
+We do not sell your personal information. We may share your information with:
+- Service providers who assist in operating our Service
+- Legal authorities when required by law
+- Other parties with your consent
 
-We do not sell your personal data. We only share your data in the following circumstances:
+## 4. Data Security
 
-- With trusted third-party services for payment processing, analytics, and cloud storage (under strict confidentiality agreements)
-- To comply with legal obligations, such as court orders or lawful requests
+We implement appropriate technical and organizational measures to protect your personal information. However, no method of transmission over the internet is 100% secure.
 
-## 4. Data Retention
-
-We retain your data for as long as your account is active or as needed to provide our services. You may request deletion of your data at any time by contacting us.
-
-## 5. Cookies and Tracking
-
-We use cookies and similar technologies to collect usage data and improve your experience. You can manage cookie preferences in your browser settings.
-
-## 6. Your Rights
+## 5. Your Rights
 
 You have the right to:
+- Access your personal information
+- Correct inaccurate information
+- Request deletion of your information
+- Opt-out of marketing communications
+- Export your data
 
-- Access the personal data we hold about you
-- Correct inaccuracies in your personal data
-- Request data deletion or account termination
-- Withdraw consent to marketing communications
+## 6. Cookies and Tracking
 
-## 7. Security
+We use cookies and similar technologies to:
+- Remember your preferences
+- Analyze Service usage
+- Improve our Service
 
-We use appropriate technical and organizational safeguards to protect your personal data, including encryption, access controls, and secure hosting environments.
+## 7. Children's Privacy
 
-## 8. International Users
+Our Service is not intended for children under 18. We do not knowingly collect personal information from children.
 
-If you are accessing the Service from outside the United States, you acknowledge that your data may be transferred to and processed in the U.S. in accordance with this policy.
+## 8. Changes to This Policy
 
-## 9. Updates to This Policy
+We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page.
 
-We may update this Privacy Policy from time to time. We will notify you of significant changes via email or by posting an updated version on the Site.
+## 9. Contact Us
 
-## 10. Contact Us
-
-If you have questions about this Privacy Policy, please contact us at privacy@concertindustry.com.
+If you have any questions about this Privacy Policy, please contact us at support@concertindustry.com.
 
 © 2025 Ground Branch Inc. All rights reserved.

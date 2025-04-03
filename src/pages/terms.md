@@ -1,7 +1,9 @@
 ---
 title: 'Terms and Conditions'
-layout: '~/layouts/LegalLayout.astro'
+layout: '~/layouts/PageLayout.astro'
 ---
+
+# Terms and Conditions
 
 _Effective Date_: April 2, 2025
 
