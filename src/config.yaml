@@ -1,6 +1,6 @@
 site:
   name: Tour Scout
-  site: 'https://concertindustry.com'
+  site: 'https://tourscout.ai'
   base: '/'
   trailingSlash: false
 
@@ -17,12 +17,17 @@ metadata:
     follow: true
   openGraph:
     site_name: Tour Scout
-    images:
-      - url: '/images/tour-scout-mockup.png'
-        width: 375
-        height: 812
     type: website
+    locale: en_US
+    images:
+      - url: '/images/tourscout-social-preview.png'
+        width: 1200
+        height: 630
+        alt: 'Tour Scout - AI Tour Planning Assistant'
+        type: 'image/png'
   twitter:
+    handle: '@tourscoutai'
+    site: '@tourscoutai'
     cardType: summary_large_image
 
 i18n:
