@@ -1,0 +1,30 @@
+---
+// Theme implementation
+---
+
+<script is:inline>
+  function applyTheme(theme) {
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+    const matches = document.querySelectorAll('[data-aw-toggle-color-scheme] > input');
+
+    if (matches && matches.length) {
+      matches.forEach((elem) => {
+        elem.checked = theme !== 'dark';
+      });
+    }
+  }
+
+  // Force dark mode
+  applyTheme('dark');
+  localStorage.theme = 'dark';
+
+  // Add meta theme-color for mobile browsers
+  const metaThemeColor = document.createElement('meta');
+  metaThemeColor.name = 'theme-color';
+  metaThemeColor.content = '#0f172a'; // Dark background color
+  document.head.appendChild(metaThemeColor);
+</script>
