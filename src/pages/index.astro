@@ -1,0 +1,284 @@
+---
+import Layout from '~/layouts/Layout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import ScrollingConversation from '~/components/widgets/ScrollingConversation.astro';
+
+// SEO metadata
+const seoData = {
+  title: "Tour Scout - AI-Powered Tour Planning Assistant",
+  description: "Smarter routing, crew-ready logistics, and peace of mind for every show. Get instant answers about venues, routing, accommodations, and local amenities with our AI-powered tour planning assistant.",
+  keywords: "tour planning, tour management, AI assistant, venue information, tour routing, crew resources, music industry, touring",
+  ogImage: "/images/tourscout-social-preview.png",
+  twitterCard: "summary_large_image",
+  structuredData: {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Tour Scout",
+    "applicationCategory": "TourPlanningApplication",
+    "operatingSystem": "Web",
+    "offers": {
+      "@type": "Offer",
+      "price": "12",
+      "priceCurrency": "USD"
+    },
+    "description": "AI-powered tour planning assistant for the music industry",
+    "featureList": [
+      "Venue intelligence",
+      "Tour routing",
+      "Local amenities",
+      "Crew resources",
+      "Real-time updates"
+    ]
+  }
+};
+---
+
+<Layout metadata={seoData}>
+  <Hero>
+    <Fragment slot="title">
+      <h1 class="text-7xl md:text-8xl lg:text-9xl font-black text-gray-900 dark:text-white mb-4 tracking-tight leading-none">TOUR SCOUT</h1>
+      <span class="block text-2xl md:text-3xl font-medium text-gray-600 dark:text-gray-300 mb-4">Your AI-Powered Tour Companion</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <div class="max-w-3xl mx-auto">
+        <p class="text-xl text-gray-600 dark:text-gray-400">
+          A ChatGPT assistant that truly understands the road. Built specifically for touring professionals, 
+          TOUR SCOUT brings you intelligent routing, venue insights, and local recommendations to make every stop on your tour smoother.
+        </p>
+      </div>
+    </Fragment>
+
+    <Fragment slot="image">
+      <div class="relative group max-w-[375px] mx-auto p-15">
+        <div class="absolute -inset-3 bg-gradient-to-r from-purple-600 to-pink-600 rounded-[2.5rem] blur-xl opacity-30 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+        <div class="relative">
+          <img 
+            src="/images/tour-scout-mockup.png" 
+            alt="TOUR SCOUT Chat Interface - AI-powered assistant for touring professionals"
+            width="375"
+            height="812"
+            loading="eager"
+            class="relative mx-auto w-full h-auto rounded-[2rem] shadow-xl"
+          />
+        </div>
+      </div>
+    </Fragment>
+  </Hero>
+
+  <section id="demo" class="px-4 py-16 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-7xl">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
+        Example conversations with TourScout:
+      </h2>
+      <p class="mt-4 text-lg text-gray-600 dark:text-gray-400">
+        Scout understands all of the questions you ask while on tour.
+      </p>
+    </div>
+    <ScrollingConversation />
+  </section>
+
+  {/* Pricing Section */}
+  <div class="relative py-16 bg-white dark:bg-slate-900">
+    <div class="container mx-auto px-4">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold tracking-tight text-gray-900 dark:text-white mb-4">
+            Simple, Transparent Pricing
+          </h2>
+          <p class="text-xl text-gray-600 dark:text-gray-400">
+            Start planning smarter tours today
+          </p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          {/* Current Plan */}
+          <div class="relative group">
+            <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-blue-400 rounded-lg blur-lg opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+            <div class="relative flex flex-col p-8 bg-white dark:bg-slate-800 shadow-lg rounded-lg border-2 border-blue-500 dark:border-blue-400">
+              <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">TourScout Beta</h3>
+              <div class="mb-8">
+                <span class="text-4xl font-bold text-gray-900 dark:text-white">$12</span>
+                <span class="text-gray-600 dark:text-gray-400">/month</span>
+              </div>
+              <ul class="mb-8 space-y-4">
+                <li class="flex items-center">
+                  <svg class="w-5 h-5 text-blue-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  Unlimited conversations with Scout
+                </li>
+                <li class="flex items-center">
+                  <svg class="w-5 h-5 text-blue-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  Tour routing & planning
+                </li>
+                <li class="flex items-center">
+                  <svg class="w-5 h-5 text-blue-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  Venue & local insights
+                </li>
+                <li class="flex items-center">
+                  <svg class="w-5 h-5 text-blue-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  Early access to new features
+                </li>
+              </ul>
+              <a
+                href="https://buy.stripe.com/5kA03B9He1Ll1EcaLn"
+                class="inline-flex justify-center items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition duration-150"
+              >
+                Get Started
+              </a>
+            </div>
+          </div>
+
+          {/* Coming Soon Plan */}
+          <div class="relative group">
+            <div class="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg blur-lg opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+            <div class="relative flex flex-col p-8 bg-white dark:bg-slate-800 shadow-lg rounded-lg border border-purple-500 dark:border-purple-400">
+              <div class="inline-flex items-center mb-2">
+                <span class="px-3 py-1 text-sm text-purple-600 bg-purple-100 dark:text-purple-400 dark:bg-purple-900 rounded-full">
+                  Coming Soon
+                </span>
+              </div>
+              <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">TourScout Pro</h3>
+              <div class="mb-8">
+                <span class="text-4xl font-bold text-gray-900 dark:text-white">Coming Soon</span>
+              </div>
+              <ul class="mb-8 space-y-4">
+                <li class="flex items-center">
+                  <svg class="w-5 h-5 text-purple-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  Everything in Beta
+                </li>
+                <li class="flex items-center">
+                  <svg class="w-5 h-5 text-purple-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  Calendar integration
+                </li>
+                <li class="flex items-center">
+                  <svg class="w-5 h-5 text-purple-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  Google integration
+                </li>
+                <li class="flex items-center">
+                  <svg class="w-5 h-5 text-purple-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  Real-time flight tracking
+                </li>
+              </ul>
+              <button
+                disabled
+                class="inline-flex justify-center items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-gray-500 bg-gray-100 dark:bg-gray-700 dark:text-gray-400 cursor-not-allowed transition duration-150"
+              >
+                Coming Soon
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <Features2
+    title="Key Capabilities"
+    subtitle="TourScout is built to handle the unique challenges of touring professionals."
+    items={[
+      {
+        title: 'Tour Routing',
+        description: "Create comprehensive routing tables with dates, cities, venues, and drive times. TourScout understands the unique challenges of tour logistics.",
+        icon: 'tabler:route',
+      },
+      {
+        title: 'Hotel Planning',
+        description: "Find the perfect hotels with bus/truck parking and crew-friendly amenities. Get recommendations based on real touring experience.",
+        icon: 'tabler:building',
+      },
+      {
+        title: 'Local Knowledge',
+        description: "Discover late-night food, coffee, laundry, and other essential amenities near venues. All recommendations are crew-tested.",
+        icon: 'tabler:map-pin',
+      },
+      {
+        title: 'Venue Intelligence',
+        description: "Get detailed venue information, load-in access details, and local event warnings that could affect your show.",
+        icon: 'tabler:building-warehouse',
+      },
+      {
+        title: 'Wellness Resources',
+        description: "Find concierge doctors, urgent care, ENTs, chiropractors, and other health services near venues.",
+        icon: 'tabler:heart-plus',
+      },
+      {
+        title: 'Interactive Maps',
+        description: "Build interactive HTML maps with color-coded markers and smart location clustering for better visualization.",
+        icon: 'tabler:map-2',
+      },
+      {
+        title: 'Travel Planning',
+        description: "Get smart suggestions for travel day stopovers and optimal routes based on crew experience.",
+        icon: 'tabler:compass',
+      },
+      {
+        title: 'Local Events',
+        description: "Stay informed about local events that could affect load-in or hotel access.",
+        icon: 'tabler:calendar-event',
+      },
+      {
+        title: 'Crew Resources',
+        description: "Access a comprehensive database of crew-friendly locations and services across the country.",
+        icon: 'tabler:users',
+      },
+      {
+        title: 'Integrations',
+        description: "<span class='group-hover:animate-sparkle'>✨</span> Coming Soon: Seamlessly connect with your existing tools. Calendar syncing, API integrations, and more powerful features coming in TourScout Pro.",
+        icon: 'tabler:api'
+      }
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features2>
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Start Planning',
+        href: 'https://buy.stripe.com/5kA03B9He1Ll1EcaLn',
+        icon: 'tabler:message',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      Ready to Plan Your Next Tour?
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Let TourScout help you plan and execute your next tour with AI-powered assistance.
+    </Fragment>
+  </CallToAction>
+</Layout>
+
+<script type="application/ld+json" is:inline set:html={JSON.stringify(seoData.structuredData)} />
+
+<style>
+  @keyframes sparkle {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.1); }
+  }
+  .animate-sparkle {
+    animation: sparkle 2s ease-in-out infinite;
+    display: inline-block;
+  }
+</style>

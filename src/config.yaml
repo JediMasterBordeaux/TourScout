@@ -1,0 +1,75 @@
+site:
+  name: Tour Scout
+  site: 'https://tourscout.ai'
+  base: '/'
+  trailingSlash: false
+
+  googleSiteVerificationId: null
+
+# Default SEO metadata
+metadata:
+  title:
+    default: Tour Scout
+    template: '%s — Tour Scout'
+  description: "Smarter routing, crew-ready logistics, and peace of mind for every show."
+  robots:
+    index: true
+    follow: true
+  openGraph:
+    site_name: Tour Scout
+    type: website
+    locale: en_US
+    images:
+      - url: '/images/tourscout-social-preview.png'
+        width: 1200
+        height: 630
+        alt: 'Tour Scout - AI Tour Planning Assistant'
+        type: 'image/png'
+  twitter:
+    handle: '@tourscoutai'
+    site: '@tourscoutai'
+    cardType: summary_large_image
+
+i18n:
+  language: en
+  textDirection: ltr
+
+apps:
+  blog:
+    isEnabled: false
+    postsPerPage: 6
+
+    post:
+      isEnabled: false
+      permalink: '/%slug%'
+      robots:
+        index: true
+
+    list:
+      isEnabled: false
+      pathname: 'blog'
+      robots:
+        index: true
+
+    category:
+      isEnabled: false
+      pathname: 'category'
+      robots:
+        index: true
+
+    tag:
+      isEnabled: false
+      pathname: 'tag'
+      robots:
+        index: false
+
+    isRelatedPostsEnabled: false
+    relatedPostsCount: 4
+
+analytics:
+  vendors:
+    googleAnalytics:
+      id: null
+
+ui:
+  theme: 'system'

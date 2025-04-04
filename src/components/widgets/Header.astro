@@ -1,0 +1,39 @@
+---
+import Logo from '~/components/Logo.astro';
+import ToggleTheme from '~/components/common/ToggleTheme.astro';
+
+import { getHomePermalink } from '~/utils/permalinks';
+
+export interface Props {
+  id?: string;
+  isSticky?: boolean;
+  isDark?: boolean;
+  showToggleTheme?: boolean;
+}
+
+const {
+  id = 'header',
+  isSticky = false,
+  isDark = false,
+  showToggleTheme = false,
+} = Astro.props;
+---
+
+<header
+  class:list={[
+    { sticky: isSticky, relative: !isSticky, dark: isDark },
+    'top-0 z-40 flex-none mx-auto w-full border-b border-gray-50/0 transition-[opacity] ease-in-out',
+  ]}
+  {...isSticky ? { 'data-aw-sticky-header': true } : {}}
+  {...id ? { id } : {}}
+>
+  <div class="absolute inset-0"></div>
+  <div class="relative text-default py-3 px-3 md:px-6 mx-auto w-full max-w-7xl">
+    <div class="flex justify-between items-center">
+      <a class="flex items-center" href={getHomePermalink()}>
+        <Logo />
+      </a>
+      {showToggleTheme && <ToggleTheme iconClass="w-6 h-6 md:w-5 md:h-5 md:inline-block" />}
+    </div>
+  </div>
+</header>

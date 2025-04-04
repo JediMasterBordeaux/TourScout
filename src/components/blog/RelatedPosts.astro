@@ -1,0 +1,25 @@
+---
+import { APP_BLOG } from 'astrowind:config';
+
+import { getRelatedPosts } from '~/utils/blog';
+import BlogHighlightedPosts from '~/components/widgets/BlogHighlightedPosts.astro';
+import type { Post } from '~/types';
+
+export interface Props {
+  post: Post;
+}
+
+const { post } = Astro.props;
+const relatedPosts = await getRelatedPosts(post);
+
+const title = APP_BLOG?.relatedPosts?.title as string;
+---
+
+{
+  APP_BLOG?.isRelatedPostsEnabled && relatedPosts.length > 0 && (
+    <BlogHighlightedPosts
+      title={title}
+      posts={relatedPosts}
+    />
+  )
+}
