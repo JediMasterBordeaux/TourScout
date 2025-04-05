@@ -30,9 +30,13 @@ const {
   <div class="absolute inset-0"></div>
   <div class="relative text-default py-3 px-3 md:px-6 mx-auto w-full max-w-7xl">
     <div class="flex justify-between items-center">
-      <a class="flex items-center" href={getHomePermalink()}>
-        <Logo />
-      </a>
+      <div class="flex items-center gap-4">
+        <a class="flex items-center" href={getHomePermalink()}>
+          <Logo />
+        </a>
+        <a href="/redirect" class="text-xs text-gray-400 hover:text-gray-600 dark:hover:text-gray-300" title="Getting Started Guide">getting started</a>
+        <a href={getHomePermalink()} class="text-sm font-medium text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white" title="Back to Home">←</a>
+      </div>
       {showToggleTheme && <ToggleTheme iconClass="w-6 h-6 md:w-5 md:h-5 md:inline-block" />}
     </div>
   </div>
