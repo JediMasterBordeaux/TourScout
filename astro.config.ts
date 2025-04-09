@@ -17,7 +17,7 @@ const whenExternalScripts = (items: AstroIntegration[]) =>
 
 export default defineConfig({
   output: 'static',
-  site: 'https://tourscout.ai',
+  site: 'https://concertindustry.com',
   base: '/',
 
   integrations: [

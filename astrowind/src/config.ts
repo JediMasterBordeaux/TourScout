@@ -1,6 +1,6 @@
 export const SITE = {
   name: 'Tour Scout',
-  site: 'https://tourscout.ai',
+  site: 'https://concertindustry.com',
   base: '/',
   description: 'AI-Powered Tour Planning Assistant',
   ogImage: {
