@@ -4,7 +4,7 @@ export const SITE = {
   base: '/',
   description: 'AI-Powered Tour Planning Assistant',
   ogImage: {
-    src: '/images/tourscout-social-preview.png',
+    src: 'https://concertindustry.com/images/tourscout-social-preview.png',
     width: 1200,
     height: 630,
     alt: 'Tour Scout - AI Tour Planning Assistant'
@@ -30,7 +30,7 @@ export const METADATA = {
     siteName: SITE.name,
     images: [
       {
-        url: SITE.ogImage.src,
+        url: 'https://concertindustry.com/images/tourscout-social-preview.png',
         width: SITE.ogImage.width,
         height: SITE.ogImage.height,
         alt: SITE.ogImage.alt,
@@ -44,6 +44,6 @@ export const METADATA = {
     cardType: 'summary_large_image',
     title: 'Tour Scout – AI-Powered Tour Planning Assistant',
     description: 'Smarter routing, crew-ready logistics, and peace of mind for every show.',
-    images: [SITE.ogImage.src],
+    images: ['https://concertindustry.com/images/tourscout-social-preview.png'],
   },
 }; 

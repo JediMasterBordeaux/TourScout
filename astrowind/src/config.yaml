@@ -20,7 +20,7 @@ metadata:
     type: website
     locale: en_US
     images:
-      - url: '/images/tourscout-social-preview.png'
+      - url: 'https://concertindustry.com/images/tourscout-social-preview.png'
         width: 1200
         height: 630
         alt: 'Tour Scout - AI Tour Planning Assistant'
