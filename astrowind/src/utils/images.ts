@@ -3,7 +3,7 @@ import type { ImageMetadata } from 'astro';
 import type { OpenGraph } from '@astrolib/seo';
 
 const defaultImage = {
-  url: '/images/tourscout-social-preview.png',
+  url: 'https://concertindustry.com/images/tourscout-social-preview.png',
   width: 1200,
   height: 630,
 };
