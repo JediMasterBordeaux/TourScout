@@ -1,0 +1,10 @@
+{
+  "name": "tourscout-email-collection",
+  "version": "1.0.0",
+  "description": "Email collection function for Tour Scout",
+  "main": "collect-email.js",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.0",
+    "@sendgrid/mail": "^7.7.0"
+  }
+} 
